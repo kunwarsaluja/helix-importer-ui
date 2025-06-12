@@ -16,7 +16,7 @@ export function convertTablesToDA(html) {
       let blockName = '';
       const firstRow = table.rows[0];
       if (firstRow) {
-        blockName = firstCell.textContent.trim().toLowerCase();
+        blockName = firstRow.textContent.trim().toLowerCase();
       }
       if (!blockName) return;
   
