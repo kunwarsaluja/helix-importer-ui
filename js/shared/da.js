@@ -33,7 +33,10 @@ export function convertTablesToDA(html) {
         const rowDiv = doc.createElement('div');
         Array.from(row.cells).forEach(cell => {
           const cellDiv = doc.createElement('div');
-          cellDiv.innerHTML = `<p>${cell.innerHTML}</p>`;
+          // add <td><script>alert('XSS')</script></td>
+          cellDiv.innerHTML = `<td><script>alert('XSS')</script></td>`;
+
+          // cellDiv.innerHTML = `<p>${cell.innerHTML}</p>`;
           rowDiv.appendChild(cellDiv);
         });
         blockDiv.appendChild(rowDiv);
