@@ -104,7 +104,7 @@ const loadDocument = async (url, options) => {
   if (enableJs) {
     frame.removeAttribute('sandbox');
   } else {
-    frame.setAttribute('sandbox', 'allow-same-origin');
+    // frame.setAttribute('sandbox', 'allow-same-origin');
   }
 
   const onLoad = async () => {
