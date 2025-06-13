@@ -248,6 +248,7 @@ const startImport = async () => {
   });
 
   const processNext = async () => {
+    await new Promise(resolve => setTimeout(resolve, 5000));
     if (urlsArray.length > 0) {
       const url = urlsArray.pop();
       const { remote, proxy } = getProxyURLSetup(url, config.origin);
